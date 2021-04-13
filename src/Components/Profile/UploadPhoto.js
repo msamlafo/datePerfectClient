@@ -2,7 +2,7 @@ import { getThemeProps } from "@material-ui/styles";
 import React, { useState } from "react";
 import API_URL from '../../environment'
 
-const CLOUD_URL = "https://api.cloudinary.com/v1_1/dpbvzjhck/image/upload";
+const CLOUD_URL = "https://api.cloudinary.com/v1_1/dcfmnomqh/image/upload";
 
 const Upload = (props) => {
   const [fileInputState, setFileInputState] = useState(null);
@@ -24,6 +24,7 @@ const Upload = (props) => {
       setPreviewSource(reader.result);
     };
   };
+  
   const handleSubmitFile = async (e) => {
     console.log("submitting");
     console.log(previewSource);
@@ -43,10 +44,11 @@ const Upload = (props) => {
     const formData = new FormData();
 
     formData.append("file", fileInputState);
-    formData.append("upload_preset", "datePerfect");
-    formData.append("api_key", "633428644161178");
+    formData.append("upload_preset", "dateperfect"); //edited
+    formData.append("api_key", "223952152215851");
     formData.append("signature", sig);
     formData.append("timestamp", ts);
+
     console.log(ts);
 
     const results = await (
@@ -87,7 +89,7 @@ const Upload = (props) => {
         </button>
       </form>
       {previewSource && (
-        <img src={previewSource} alt="chosen" style={{ height: "200px" }}></img>
+        <img src={previewSource} alt="chosen" style={{ height: "200px" }} />
       )}
     </div>
   );
