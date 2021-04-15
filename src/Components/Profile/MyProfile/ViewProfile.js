@@ -77,8 +77,7 @@ export default function ViewProfile(props) {
             {/* //img goes here */}
                
             <CardMedia />
-                <img src={props.userProfile.picURL} style={{ height: "200px" }} />
-                {console.log(props.userProfile.picURL)} 
+                <img src={props.userProfile?.picURL} style={{ height: "200px" }} alt='Pic'/>
           </div>
         </div>
       </div>
@@ -95,7 +94,7 @@ export default function ViewProfile(props) {
             </Typography>
 
             <Typography variant="body2" color="textSeconday" component="h3">
-            {props.userProfile.hobbies !== '' ? <h5> HOBBIES </h5>: ''}
+            {props.userProfile?.hobbies !== '' ? <h5> HOBBIES </h5>: ''}
             
             
           </Typography>
